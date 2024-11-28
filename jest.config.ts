@@ -24,7 +24,13 @@ const config: Config.InitialOptions = {
   coveragePathIgnorePatterns: [  
     '/node_modules/',   
     '/dist/'  
-  ]  
+  ],
+  maxWorkers: 2,
+  verbose: true,
+  testTimeout:60000,
+  maxConcurrency: 3,
+  bail: true,
+  workerIdleMemoryLimit: '2GB'
 };  
 
 export default config;
