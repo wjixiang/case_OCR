@@ -19,10 +19,18 @@ export default class config {
     }
 
     static get_API_URL():string{
-        if(process.env.API_URL){
-            return process.env.API_URL
+        if(process.env.AI_API_URL){
+            return process.env.AI_API_URL
         }else{
-            throw(new Error("未设置API_URL"))
+            throw(new Error("未设置AI_API_URL"))
+        }
+    }
+
+    static get_API_KEY():string{
+        if(process.env.AI_API_KEY){
+            return process.env.AI_API_KEY
+        }else{
+            throw(new Error("未设置AI_API_KEY"))
         }
     }
 }

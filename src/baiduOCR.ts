@@ -46,7 +46,7 @@ class BaiduOCR {
 
       return response.data;  
     } catch (error) {  
-      console.error('OCR识别失败:', error);  
+      console.error('OCR识别失败:');  
       throw error;  
     }  
   }  

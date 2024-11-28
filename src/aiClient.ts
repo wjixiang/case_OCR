@@ -20,7 +20,7 @@ export class AIClient {
 
     }  
 
-    async callAPI(requestData: AIRequest):Promise<string> {  
+    async call(requestData: AIRequest):Promise<string> {  
         try {  
             const response = await axios.post(this.apiUrl, requestData, {  
                 headers: {  

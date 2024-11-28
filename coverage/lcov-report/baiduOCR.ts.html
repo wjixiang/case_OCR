@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/14</span>
+                <span class='fraction'>2/14</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/5</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">14.28% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/14</span>
+                <span class='fraction'>2/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -131,25 +131,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -158,11 +147,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -171,8 +158,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -185,7 +185,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,14 +194,14 @@
 &nbsp;
 class BaiduOCR {   
   private accessToken: string
-  private baseUrl: string = 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic';  
+  private baseUrl: string = <span class="cstat-no" title="statement not covered" >'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate_basic';  </span>
 &nbsp;
-  constructor(accessToken: string) {  
-    this.accessToken = accessToken;  
+<span class="fstat-no" title="function not covered" >  constructor(a</span>ccessToken: string) {  
+<span class="cstat-no" title="statement not covered" >    this.accessToken = accessToken;  </span>
   }  
 &nbsp;
-  static async getAccessToken(client_id:string,client_secret:string){
-    const options = {
+<span class="fstat-no" title="function not covered" >  static </span>async getAccessToken(client_id:string,client_secret:string){
+    const options = <span class="cstat-no" title="statement not covered" >{</span>
         'method': 'POST',
         'url': `https://aip.baidubce.com/oauth/2.0/token?client_id=${client_id}&amp;client_secret=${client_secret}&amp;grant_type=client_credentials`,
         'headers': {
@@ -210,9 +210,9 @@ class BaiduOCR {
         }
     };
 &nbsp;
-    return await axios(options)
-        .then(res=&gt;{
-            return res.data.access_token
+<span class="cstat-no" title="statement not covered" >    return await axios(options)</span>
+        .then(<span class="fstat-no" title="function not covered" >res=</span>&gt;{
+<span class="cstat-no" title="statement not covered" >            return res.data.access_token</span>
         })
   }
   /**  
@@ -220,12 +220,12 @@ class BaiduOCR {
    * @param imageBase64 图片的Base64编码  
    * @returns Promise&lt;any&gt; OCR识别结果  
    */  
-  async generalOCR(imageBase64: string): Promise&lt;any&gt; {  
-    try {  
+<span class="fstat-no" title="function not covered" >  async </span>generalOCR(imageBase64: string): Promise&lt;any&gt; {  
+<span class="cstat-no" title="statement not covered" >    try {  </span>
       // 对Base64编码进行URL编码  
-      const encodedImage = encodeURIComponent(imageBase64);  
+      const encodedImage = <span class="cstat-no" title="statement not covered" >encodeURIComponent(imageBase64);  </span>
 &nbsp;
-      const response = await axios.post(  
+      const response = <span class="cstat-no" title="statement not covered" >await axios.post(  </span>
         `${this.baseUrl}?access_token=${this.accessToken}`,  
         `image=${encodedImage}`,  
         {  
@@ -235,9 +235,9 @@ class BaiduOCR {
         }  
       );  
 &nbsp;
-      return response.data;  
+<span class="cstat-no" title="statement not covered" >      return response.data;  </span>
     } catch (error) {  
-<span class="cstat-no" title="statement not covered" >      console.error('OCR识别失败:', error);  </span>
+<span class="cstat-no" title="statement not covered" >      console.error('OCR识别失败:');  </span>
 <span class="cstat-no" title="statement not covered" >      throw error;  </span>
     }  
   }  
@@ -247,8 +247,8 @@ class BaiduOCR {
    * @param file 文件对象  
    * @returns Promise&lt;string&gt; Base64编码  
    */  
-    fileToBase64(file: Buffer): string {  
-    return file.toString('base64')
+<span class="fstat-no" title="function not covered" >    fileToBase64(</span>file: Buffer): string {  
+<span class="cstat-no" title="statement not covered" >    return file.toString('base64')</span>
   } 
 }  
 &nbsp;
@@ -259,7 +259,7 @@ export default BaiduOCR;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-28T08:44:42.916Z
+                at 2024-11-28T14:10:41.779Z
             </div>
         <script src="prettify.js"></script>
         <script>
