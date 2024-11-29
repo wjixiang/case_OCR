@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">47.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/38</span>
+                <span class='fraction'>18/38</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">47.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/36</span>
+                <span class='fraction'>17/36</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -159,9 +159,29 @@
 <a name='L94'></a><a href='#L94'>94</a>
 <a name='L95'></a><a href='#L95'>95</a>
 <a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -203,7 +223,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -246,18 +266,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">37x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">37x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import BaiduOCR from "./baiduOCR";
 import * as path from 'path'
 import * as fs from 'fs'
+&nbsp;
+interface ocrResult{
+    words_result: wordsResult[];
+    words_result_num: number;
+    log_id: number;
+}
+&nbsp;
+interface wordsResult {
+    words: string
+}
 &nbsp;
 export interface caseOCRrequest {
     folderPath: string;
@@ -288,7 +318,7 @@ export class caseOCR implements caseOCRrequest{
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        for(const i of concurrencePlan){</span>
             const res = <span class="cstat-no" title="statement not covered" >await Promise.all(await this.ocr(i))</span>
-<span class="cstat-no" title="statement not covered" >            console.log(res)</span>
+<span class="cstat-no" title="statement not covered" >            console.log("bulkOCR:",res)</span>
 <span class="cstat-no" title="statement not covered" >            ocrResult.push(...res)</span>
         }
 <span class="cstat-no" title="statement not covered" >        return ocrResult</span>
@@ -299,7 +329,7 @@ export class caseOCR implements caseOCRrequest{
         const fileNameArray = this.getFileNameList()
         const result:string[][] = []
         for (let i = 0; i &lt; fileNameArray.length; i += this.ConcurrencyLimit) {  
-            result.push(fileNameArray.slice(i, i + this.ConcurrencyLimit));  
+<span class="cstat-no" title="statement not covered" >            result.push(fileNameArray.slice(i, i + this.ConcurrencyLimit));  </span>
         }  
         return result
     }
@@ -326,16 +356,16 @@ export class caseOCR implements caseOCRrequest{
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    async </span>getRawText(){
-        const res_list = <span class="cstat-no" title="statement not covered" >await this.getRawOcrRes()</span>
+        const res_list:ocrResult[] = <span class="cstat-no" title="statement not covered" >await this.getRawOcrRes()</span>
         const rawTextList =  <span class="cstat-no" title="statement not covered" >res_list.map(<span class="fstat-no" title="function not covered" >res=</span>&gt;{</span>
 <span class="cstat-no" title="statement not covered" >            return res.words_result.map(<span class="fstat-no" title="function not covered" >(i</span>tem:{words: string})=&gt; <span class="cstat-no" title="statement not covered" >item.words.trim())</span>.join('')</span>
         })
-<span class="cstat-no" title="statement not covered" >        console.log(rawTextList)</span>
+<span class="cstat-no" title="statement not covered" >        console.log("ocr result:",rawTextList)</span>
 <span class="cstat-no" title="statement not covered" >        return rawTextList</span>
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    async </span>getRawOcrRes(){
-        const res_list = <span class="cstat-no" title="statement not covered" >await Promise.all(await this.bulkOCR())</span>
+        const res_list:ocrResult[] = <span class="cstat-no" title="statement not covered" >await Promise.all(await this.bulkOCR())</span>
         // console.log(res_list)
 <span class="cstat-no" title="statement not covered" >        return res_list</span>
     }
@@ -358,7 +388,7 @@ export class caseOCR implements caseOCRrequest{
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-11-28T14:10:41.779Z
+                at 2024-11-29T02:20:57.923Z
             </div>
         <script src="prettify.js"></script>
         <script>

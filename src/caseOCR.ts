@@ -2,6 +2,16 @@ import BaiduOCR from "./baiduOCR";
 import * as path from 'path'
 import * as fs from 'fs'
 
+interface ocrResult{
+    words_result: wordsResult[];
+    words_result_num: number;
+    log_id: number;
+}
+
+interface wordsResult {
+    words: string
+}
+
 export interface caseOCRrequest {
     folderPath: string;
     BAIDU_APIKEY: string;
@@ -31,7 +41,7 @@ export class caseOCR implements caseOCRrequest{
 
         for(const i of concurrencePlan){
             const res = await Promise.all(await this.ocr(i))
-            console.log(res)
+            console.log("bulkOCR:",res)
             ocrResult.push(...res)
         }
         return ocrResult
@@ -69,16 +79,16 @@ export class caseOCR implements caseOCRrequest{
     }
 
     async getRawText(){
-        const res_list = await this.getRawOcrRes()
+        const res_list:ocrResult[] = await this.getRawOcrRes()
         const rawTextList =  res_list.map(res=>{
             return res.words_result.map((item:{words: string})=> item.words.trim()).join('')
         })
-        console.log(rawTextList)
+        console.log("ocr result:",rawTextList)
         return rawTextList
     }
 
     async getRawOcrRes(){
-        const res_list = await Promise.all(await this.bulkOCR())
+        const res_list:ocrResult[] = await Promise.all(await this.bulkOCR())
         // console.log(res_list)
         return res_list
     }

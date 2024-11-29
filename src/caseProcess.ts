@@ -30,6 +30,7 @@ export default class caseProcess{
         const secondTextArray = secondText.split(/,|，|。|\n/g)
         console.log(firstTextArray)
         console.log(secondTextArray)
+        
         return "test"
     }
 

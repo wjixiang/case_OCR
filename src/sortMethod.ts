@@ -5,3 +5,9 @@ export const sortByLast:(fileNameA:string,fileNameB:string)=> number = (fileName
     const numB = parseInt(fileNameB.replace(path.extname(fileNameA),"").slice(-6))
     return numA-numB
 }
+
+export const sortByName:(fileNameA:string,fileNameB:string)=> number = (fileNameA,fileNameB)=>{
+    const numA = parseInt(fileNameA)
+    const numB = parseInt(fileNameB)
+    return numA-numB
+}

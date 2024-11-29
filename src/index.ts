@@ -1,24 +1,27 @@
 import { caseOCR, caseOCRrequest } from "./caseOCR";
 import caseProcess from "./caseProcess";
 import config from "./config";
-import { sortByLast } from "./sortMethod";
+import {sortByName } from "./sortMethod";
 import * as fs from 'fs';
 
-const name = ['入院记录','出院记录','病程记录']
+const name = fs.readdirSync("/Users/a123/Desktop/test/").reverse()
+name.pop()
+
+
 
 async function generate(name:string){
     const req:caseOCRrequest = {
-        folderPath: `/Users/a123/Desktop/test/肾病综合征/${name}`,
+        folderPath: `/Users/a123/Desktop/test/${name}`,
         BAIDU_APIKEY: config.get_BAIDU_APIKEY(),
         SECRET_KEY: config.get_SECRET_KEY(),
         ConcurrencyLimit:10,
-        sortFn: sortByLast,
+        sortFn: sortByName,
     }
     const convertor = new caseOCR(req)
     const RawTextArray = await convertor.getRawText()
     const processer = new caseProcess(RawTextArray)
     const completeCase:string[] = await processer.preprocess()
-    fs.writeFileSync(`.export/肾综-${name}.txt`,completeCase.join("\n"))
+    fs.writeFileSync(`./export/${name}.txt`,completeCase.join("\n"))
 }
 
 
@@ -31,3 +34,5 @@ async function start(){
 
 
 start()
+
+console.log(name)
