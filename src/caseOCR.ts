@@ -42,6 +42,15 @@ export class caseOCR implements caseOCRrequest{
         for(const i of concurrencePlan){
             const res = await Promise.all(await this.ocr(i))
             console.log("bulkOCR:",res)
+
+            //check OCR result
+            res.forEach(ocrRes=>{
+                if(ocrRes.error_msg){
+                    console.log('OCR error')
+                    throw new Error(ocrRes.error_msg)
+                }
+            })
+
             ocrResult.push(...res)
         }
         return ocrResult
